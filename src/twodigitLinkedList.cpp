@@ -22,5 +22,16 @@ struct node {
 };
 
 int convert_sll_2digit_to_int(struct node *head){
-	return 0;
+	if (head==NULL)
+	   return 0;
+	int d1, d2,num1=0,num2=0;
+	struct node *temp=head;
+	while (temp != NULL){
+		d1 = temp->digit1;
+		num1 = num2 * 10 + d1;
+		d2 = temp->digit2;
+		num2 = num1 * 10 + d2;
+		temp = temp->next;
+	}
+	return num2;
 }

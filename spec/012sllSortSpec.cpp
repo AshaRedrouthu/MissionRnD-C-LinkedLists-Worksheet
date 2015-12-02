@@ -86,7 +86,7 @@ namespace spec
 			{
 				add(&head, num_array[i]);
 			}
-			sll_012_sort(head);
+		    sll_012_sort(head);
 			int d = check(output, len, head);
 			Assert::IsTrue(d == 1, L"Failed for sll 0001112222.", LINE_INFO());
 		}
