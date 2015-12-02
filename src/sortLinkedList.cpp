@@ -24,19 +24,20 @@ struct node * sortLinkedList(struct node *head) {
 	else{
 		int i = 0;
 		struct node *ptr = NULL, *preptr = NULL;
-		ptr = head;
 		preptr = head;
-		while (ptr->next != NULL){
-			if (ptr->num < preptr->num){
-				preptr->next = ptr->next;
-				ptr->next = preptr;
-				if (i == 0)
-					head = ptr;
+		while (preptr != NULL){
+			ptr = preptr->next;
+			while (ptr != NULL){
+				if (ptr->num < preptr->num){
+					int a = ptr->num;
+					ptr->num = preptr->num;
+					preptr->num = a;
+				}
+				ptr = ptr->next;
 			}
-			i++;
-			preptr = ptr;
-			ptr = ptr->next;
+			preptr = preptr->next;
 		}
+		
 	}
 	return head;
 }
